@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="debug-area"></div>
+        <div id="tool-bar">
+            <label for="brush-size">Brush Size</label>
+            <input
+                name="brush-size"
+                type="range"
+                id="pixel-sizer"
+                min="1"
+                max="50"
+                step="1"
+                value="5"
+            />
+        </div>
+        <canvas id="main-canvas"></canvas>
+    </body>
+    <script src="./main.js"></script>
+</html>

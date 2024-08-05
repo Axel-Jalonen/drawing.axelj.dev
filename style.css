@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#tool-bar {
+    position: absolute;
+}
+
+#main-canvas {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid red;
+}
