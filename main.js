@@ -12,7 +12,6 @@ canvas.style.width = displayWidth + "px";
 canvas.style.height = displayHeight + "px";
 canvas.width = displayWidth * scale;
 canvas.height = displayHeight * scale;
-function map(coord) {}
 
 brushSizeElement.addEventListener("input", (e) => {
   ctx.lineWidth = e.target.value;
@@ -35,6 +34,14 @@ document.addEventListener("mouseup", () => (mouseState = MouseStates.off));
 
 let mouseStarted = false;
 
+class Shape {
+  listxy = [];
+  constructor(x, y) {
+    this.lxy.push(x);
+    this.lxy.push(y);
+  }
+}
+
 function handleMouseMove(mouseEvent) {
   if (mouseState) {
     const x = mouseEvent.x;
@@ -42,6 +49,7 @@ function handleMouseMove(mouseEvent) {
     if (!mouseStarted) {
       ctx.beginPath();
       ctx.moveTo(x, y);
+
       mouseStarted = true;
     } else {
       ctx.lineTo(x, y);
