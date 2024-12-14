@@ -2,11 +2,11 @@ const canvas = document.getElementById("main-canvas");
 const ctx = canvas.getContext("2d");
 
 const brushSizeInputElement = document.getElementById("pixel-sizer");
-const debug = document.getElementById("debug-area");
 
 const SCALE = 2;
 let scaledScreenWidth;
 let scaledScreenHeight;
+let lineWidth = 10;
 
 const MouseState = {
   off: false,
@@ -24,11 +24,11 @@ initCanvasSize();
 
 window.addEventListener("resize", initCanvasSize);
 
-ctx.lineWidth = 5;
 let mouseState = MouseState.off;
 let mouseStarted = false;
 
 function handleMouseMove(mouseEvent) {
+  ctx.lineWidth = lineWidth;
   if (mouseState) {
     const x = mouseEvent.x * 2;
     const y = mouseEvent.y * 2;
@@ -50,6 +50,5 @@ document.addEventListener("mousemove", handleMouseMove);
 document.addEventListener("mousedown", () => (mouseState = MouseState.on));
 document.addEventListener("mouseup", () => (mouseState = MouseState.off));
 brushSizeInputElement.addEventListener("input", (e) => {
-  ctx.lineWidth = e.target.value;
-  debug.innerText = e.target.value;
+  lineWidth = e.target.value;
 });
