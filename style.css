@@ -28,27 +28,25 @@
 
 #mobile {
     display: none;
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    display: flex;
-    justify-content: center;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    padding: 1rem;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 @media (hover: none) and (pointer: coarse) {
-    @media (hover: none) and (pointer: coarse) {
-        body > *:first-child {
-            display: block;
-        }
-        body > *:not(:first-child) {
-            display: none;
-        }
+    body > *:first-child {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        padding: 1rem;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    body > *:not(:first-child) {
+        display: none;
     }
 }
